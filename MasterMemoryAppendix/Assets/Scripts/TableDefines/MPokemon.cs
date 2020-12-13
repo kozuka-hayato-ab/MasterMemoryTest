@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using MasterMemory;
 using MessagePack;
@@ -24,5 +24,17 @@ public partial class MPokemon
         return "Id, DisplayName, Hp, Attack, Defence, SpecialAttack, SpecialDefense, Speed" + "\n" +
                string.Format("{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}", Id, DisplayName, Hp, Attack, Defense,
                    SpecialAttack, SpecialDefence, Speed);
+    }
+
+    public MPokemon(long Id, string DisplayName, int Hp, int Attack, int Defense, int SpecialAttack, int SpecialDefence, int Speed)
+    {
+        this.Id = Id;
+        this.DisplayName = DisplayName;
+        this.Hp = Hp;
+        this.Attack = Attack;
+        this.Defense = Defense;
+        this.SpecialAttack = SpecialAttack;
+        this.SpecialDefence = SpecialDefence;
+        this.Speed = Speed;
     }
 }
