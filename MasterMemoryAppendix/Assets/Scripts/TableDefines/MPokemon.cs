@@ -4,8 +4,7 @@ using MasterMemory;
 using MessagePack;
 
 /// <summary>
-/// MCharacterテーブル
-/// ※自動生成コードのため直接編集不可
+/// MPokemonテーブル
 /// </summary>
 [MemoryTable("m_pokemon"), MessagePackObject]
 public partial class MPokemon
@@ -26,7 +25,8 @@ public partial class MPokemon
                    SpecialAttack, SpecialDefence, Speed);
     }
 
-    public MPokemon(long Id, string DisplayName, int Hp, int Attack, int Defense, int SpecialAttack, int SpecialDefence, int Speed)
+    public MPokemon(long Id, string DisplayName, int Hp, int Attack, int Defense, int SpecialAttack, int SpecialDefence,
+        int Speed)
     {
         this.Id = Id;
         this.DisplayName = DisplayName;
