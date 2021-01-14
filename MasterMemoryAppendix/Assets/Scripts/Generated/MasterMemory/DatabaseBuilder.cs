@@ -17,7 +17,7 @@ namespace Generated
 
         public DatabaseBuilder Append(System.Collections.Generic.IEnumerable<MPokemon> dataSource)
         {
-            AppendCore(dataSource, x => x.Id, System.Collections.Generic.Comparer<long>.Default);
+            AppendCore(dataSource, x => x.DisplayName, System.StringComparer.Ordinal);
             return this;
         }
 

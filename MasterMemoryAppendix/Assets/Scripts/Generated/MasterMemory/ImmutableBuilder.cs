@@ -26,7 +26,7 @@ namespace Generated
 
         public void ReplaceAll(System.Collections.Generic.IList<MPokemon> data)
         {
-            var newData = CloneAndSortBy(data, x => x.Id, System.Collections.Generic.Comparer<long>.Default);
+            var newData = CloneAndSortBy(data, x => x.DisplayName, System.StringComparer.Ordinal);
             var table = new MPokemonTable(newData);
             memory = new MemoryDatabase(
                 table
@@ -34,10 +34,10 @@ namespace Generated
             );
         }
 
-        public void RemoveMPokemon(long[] keys)
+        public void RemoveMPokemon(string[] keys)
         {
-            var data = RemoveCore(memory.MPokemonTable.GetRawDataUnsafe(), keys, x => x.Id, System.Collections.Generic.Comparer<long>.Default);
-            var newData = CloneAndSortBy(data, x => x.Id, System.Collections.Generic.Comparer<long>.Default);
+            var data = RemoveCore(memory.MPokemonTable.GetRawDataUnsafe(), keys, x => x.DisplayName, System.StringComparer.Ordinal);
+            var newData = CloneAndSortBy(data, x => x.DisplayName, System.StringComparer.Ordinal);
             var table = new MPokemonTable(newData);
             memory = new MemoryDatabase(
                 table
@@ -47,8 +47,8 @@ namespace Generated
 
         public void Diff(MPokemon[] addOrReplaceData)
         {
-            var data = DiffCore(memory.MPokemonTable.GetRawDataUnsafe(), addOrReplaceData, x => x.Id, System.Collections.Generic.Comparer<long>.Default);
-            var newData = CloneAndSortBy(data, x => x.Id, System.Collections.Generic.Comparer<long>.Default);
+            var data = DiffCore(memory.MPokemonTable.GetRawDataUnsafe(), addOrReplaceData, x => x.DisplayName, System.StringComparer.Ordinal);
+            var newData = CloneAndSortBy(data, x => x.DisplayName, System.StringComparer.Ordinal);
             var table = new MPokemonTable(newData);
             memory = new MemoryDatabase(
                 table

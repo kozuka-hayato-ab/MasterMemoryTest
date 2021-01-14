@@ -31,9 +31,9 @@ public static class MasterDataGenerator
         var builder = new DatabaseBuilder();
         builder.Append(new MPokemon[]
         {
-            new MPokemon(Id: 1, DisplayName: "フシギダネ", Hp: 45, Attack: 49, Defense: 49, SpecialAttack: 65,
+            new MPokemon(DisplayName: "フシギダネ", Hp: 45, Attack: 49, Defense: 49, SpecialAttack: 65,
                 SpecialDefence: 65, Speed: 45),
-            new MPokemon(Id: 6, DisplayName: "リザードン", Hp: 78, Attack: 84, Defense: 78, SpecialAttack: 109,
+            new MPokemon(DisplayName: "リザードン", Hp: 78, Attack: 84, Defense: 78, SpecialAttack: 109,
                 SpecialDefence: 85, Speed: 100),
         });
 

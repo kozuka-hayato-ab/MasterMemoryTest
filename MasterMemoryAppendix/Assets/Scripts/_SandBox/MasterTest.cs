@@ -11,7 +11,7 @@ public class MasterTest : MonoBehaviour
     void Start()
     {
         MasterDownloader.DownloadMasterData();
-        MPokemon temp = MasterDownloader.DB.MPokemonTable.FindById(6);
+        MPokemon temp = MasterDownloader.DB.MPokemonTable.FindByDisplayName("フシギダネ");
         Debug.Log(temp.ToString());
     }
 }

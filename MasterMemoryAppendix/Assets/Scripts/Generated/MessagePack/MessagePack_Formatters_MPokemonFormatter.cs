@@ -33,8 +33,7 @@ namespace MessagePack.Formatters
             }
 
             IFormatterResolver formatterResolver = options.Resolver;
-            writer.WriteArrayHeader(8);
-            writer.Write(value.Id);
+            writer.WriteArrayHeader(7);
             formatterResolver.GetFormatterWithVerify<string>().Serialize(ref writer, value.DisplayName, options);
             writer.Write(value.Hp);
             writer.Write(value.Attack);
@@ -54,7 +53,6 @@ namespace MessagePack.Formatters
             options.Security.DepthStep(ref reader);
             IFormatterResolver formatterResolver = options.Resolver;
             var length = reader.ReadArrayHeader();
-            var __Id__ = default(long);
             var __DisplayName__ = default(string);
             var __Hp__ = default(int);
             var __Attack__ = default(int);
@@ -70,27 +68,24 @@ namespace MessagePack.Formatters
                 switch (key)
                 {
                     case 0:
-                        __Id__ = reader.ReadInt64();
-                        break;
-                    case 1:
                         __DisplayName__ = formatterResolver.GetFormatterWithVerify<string>().Deserialize(ref reader, options);
                         break;
-                    case 2:
+                    case 1:
                         __Hp__ = reader.ReadInt32();
                         break;
-                    case 3:
+                    case 2:
                         __Attack__ = reader.ReadInt32();
                         break;
-                    case 4:
+                    case 3:
                         __Defense__ = reader.ReadInt32();
                         break;
-                    case 5:
+                    case 4:
                         __SpecialAttack__ = reader.ReadInt32();
                         break;
-                    case 6:
+                    case 5:
                         __SpecialDefence__ = reader.ReadInt32();
                         break;
-                    case 7:
+                    case 6:
                         __Speed__ = reader.ReadInt32();
                         break;
                     default:
@@ -99,7 +94,7 @@ namespace MessagePack.Formatters
                 }
             }
 
-            var ____result = new global::MPokemon(__Id__, __DisplayName__, __Hp__, __Attack__, __Defense__, __SpecialAttack__, __SpecialDefence__, __Speed__);
+            var ____result = new global::MPokemon(__DisplayName__, __Hp__, __Attack__, __Defense__, __SpecialAttack__, __SpecialDefence__, __Speed__);
             reader.Depth--;
             return ____result;
         }

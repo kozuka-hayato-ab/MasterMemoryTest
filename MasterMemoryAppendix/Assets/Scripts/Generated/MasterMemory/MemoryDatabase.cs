@@ -52,7 +52,7 @@ namespace Generated
             });
 
             ((ITableUniqueValidate)MPokemonTable).ValidateUnique(result);
-            ValidateTable(MPokemonTable.All, database, "Id", MPokemonTable.PrimaryKeySelector, result);
+            ValidateTable(MPokemonTable.All, database, "DisplayName", MPokemonTable.PrimaryKeySelector, result);
 
             return result;
         }
