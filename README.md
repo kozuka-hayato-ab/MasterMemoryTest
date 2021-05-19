@@ -1,5 +1,5 @@
 # 付録
-本リポジトリは[Master Memory事始め(個人開発編)]()の付録です。
+本リポジトリは[Master Memory事始め(個人開発編)](https://zenn.dev/kozu_pid/articles/efb21d169fb72bf87cba)の付録です。
 
 ## 付録説明
 
